@@ -1,21 +1,20 @@
 const mongoose = require('mongoose');
-const UsuariosSchema = mongoose.Schema({
-    nombre: {
+const MensajesSchema = mongoose.Schema({
+    nombreyapellido: {
         type: String,
         required: true,
         trim: true,
     },
-    celular: {
-        type: String,
+    tel: {
+        type: Number,
         trim: true,
     },
     email: {
         type: String,
         required: true,
         trim: true,
-        unique: true,
     },
-    password: {
+    mensaje: {
         type: String,
         required: true,
         trim: true,
@@ -24,13 +23,6 @@ const UsuariosSchema = mongoose.Schema({
         type: Date,
         default: Date.now(),
     },
-    category: {
-        type: String,
-    },
-    estado: {
-        type: Boolean,
-        default: true,
-    },
 });
 
-module.exports = mongoose.model('Usuario', UsuariosSchema);
+module.exports = mongoose.model('Mensajes', MensajesSchema);
