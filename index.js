@@ -28,6 +28,6 @@ app.use('/api/mensajes', mensajesRouter)
 
 
 // puerto y arranque del servidor
-app.listen(4000, () => {
+app.listen( process.env.PORT || 4000, () => {
     console.log('Servidor Funcionando');
 })
